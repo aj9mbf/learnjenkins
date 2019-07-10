@@ -20,6 +20,7 @@ public class StudentResource {
 		List<Student> stdlist=null;
 		try {
 			stdlist=StudentDao.getInstance().getStudentAll();
+			System.out.println("hi");
 		}
 		catch (Exception e) {
 			
