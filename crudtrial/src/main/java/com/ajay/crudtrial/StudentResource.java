@@ -36,7 +36,7 @@ public class StudentResource {
 		List<Student> stdlist=null;
 		try {
 			stdlist=StudentDao.getInstance().getStudent(rollno);
-			
+			System.out.println("hi");
 		}
 		catch (Exception e) {
 		}
@@ -49,6 +49,7 @@ public class StudentResource {
 	public String crearteUser(@FormParam("id") int id,@FormParam("name") String name,@FormParam("course") String course) {
 		try {
 			StudentDao.getInstance().createStudent(new Student(id,name,course));
+			System.out.println("hi");
 			return "Student created";
 		}
 		catch (Exception e) {
