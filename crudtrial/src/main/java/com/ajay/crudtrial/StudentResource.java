@@ -36,7 +36,7 @@ public class StudentResource {
 		List<Student> stdlist=null;
 		try {
 			stdlist=StudentDao.getInstance().getStudent(rollno);
-			System.out.println("hi");
+			System.out.println("hi there");
 		}
 		catch (Exception e) {
 		}
