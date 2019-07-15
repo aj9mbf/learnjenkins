@@ -37,7 +37,7 @@ public class StudentResource {
 		try {
 			stdlist=StudentDao.getInstance().getStudent(rollno);
 			System.out.println("hi there");
-			Sysout.out.println("new way to trigger");
+			Sysout.out.println("new way to trigger with webhook");
 		}
 		catch (Exception e) {
 		}
