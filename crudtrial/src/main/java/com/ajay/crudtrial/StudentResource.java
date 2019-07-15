@@ -20,7 +20,7 @@ public class StudentResource {
 		List<Student> stdlist=null;
 		try {
 			stdlist=StudentDao.getInstance().getStudentAll();
-			System.out.println("hi");
+			System.out.println("hi new branch");
 		}
 		catch (Exception e) {
 			
