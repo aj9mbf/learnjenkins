@@ -12,6 +12,7 @@ public static final String INSERT_STUDENT="Insert into Student";
 
 public List<Student> getStudentAll() throws ClassNotFoundException, SQLException {
 List<Student> ls = new ArrayList<>();
+System.out.println("inside dao");
 ls=DataServiceHelper.getInstance().executeQuery(GET_STUDENT);
 return ls;
 }
