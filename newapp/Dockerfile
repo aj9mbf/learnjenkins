@@ -1,4 +1,4 @@
-FROM tomcat:8.5
+FROM aj9mbf/images:first
 
 #RUN mkdir /usr/local/tomcat/webapps
 
