@@ -1,7 +1,7 @@
 FROM tomcat:8.5
 
-RUN mkdir /usr/local/tomcat/webapps/futurewise_app
+RUN mkdir /usr/local/tomcat/webapps/newapp
 
-COPY target/futurewise-api-1.0-SNAPSHOT.war /usr/local/tomcat/webapps/futurewise_app
+COPY target/newapp.war /usr/local/tomcat/webapps/newapp
 
 EXPOSE 8080
