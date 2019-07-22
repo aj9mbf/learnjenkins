@@ -21,7 +21,7 @@ public class TestApi {
 		HttpClient client=HttpClientBuilder.create().build();
 		int id= new Random().nextInt(31);
 		System.out.println(id);
-		HttpGet request=new HttpGet("http://localhost:8080/futurewise/user/31");
+		HttpGet request=new HttpGet("http://localhost:9090/futurewise-api-1.0-SNAPSHOT/user/31");
 		try {
 			HttpResponse response=client.execute(request);
 			Assert.assertEquals(response.getStatusLine().getStatusCode(), HttpStatus.SC_OK);
@@ -37,7 +37,7 @@ public class TestApi {
 	@Test
 	public void testGetUsers() {
 		HttpClient client=HttpClientBuilder.create().build();
-		HttpGet request=new HttpGet("http://localhost:8080/futurewise/users");
+		HttpGet request=new HttpGet("http://localhost:9090/futurewise-api-1.0-SNAPSHOT/users");
 		try {
 			HttpResponse response=client.execute(request);
 			Assert.assertEquals(response.getStatusLine().getStatusCode(), HttpStatus.SC_OK);
