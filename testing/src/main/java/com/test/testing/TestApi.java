@@ -16,6 +16,24 @@ import org.testng.annotations.Test;
 
 public class TestApi {
 
+	@Test(priority=0)
+	public void postingUser() {
+		HttpClient client=HttpClientBuilder.create().build();
+		HttpPost request=new HttpPost("http://localhost:8080/futurewise/users");
+		try {
+			request.setHeader("Content-Type","application/json; charset=UTF-8");
+			request.setEntity(new StringEntity("{\n" + 
+					"       \"id\": 44,\n" + 
+					"       \"name\": \"Dhrumil\",\n" + 
+					"       \"password\" : \"12345\",\n" + 
+					"       \"role\":\"user\"\n" + 
+					"   }"));
+		} catch (Exception e) {
+			Assert.fail("Unable to hit /users");
+			e.printStackTrace();
+		}	
+	}
+	
 	@Test
 	public void testGetUser() {
 		HttpClient client=HttpClientBuilder.create().build();
