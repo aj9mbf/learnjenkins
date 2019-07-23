@@ -7,6 +7,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
@@ -19,7 +20,7 @@ public class TestApi {
 	@Test(priority=0)
 	public void postingUser() {
 		HttpClient client=HttpClientBuilder.create().build();
-		HttpPost request=new HttpPost("http://localhost:8080/futurewise/users");
+		HttpPost request=new HttpPost("http://localhost:9090/futurewise-api-1.0-SNAPSHOT/users");
 		try {
 			request.setHeader("Content-Type","application/json; charset=UTF-8");
 			request.setEntity(new StringEntity("{\n" + 
