@@ -23,13 +23,14 @@ public class TestApi {
 		HttpClient client=HttpClientBuilder.create().build();
 		HttpPost request=new HttpPost("http://localhost:9090/futurewise-api-1.0-SNAPSHOT/users");
 		try {
-			request.setHeader("Content-Type","application/json; charset=UTF-8");
+			request.setHeader("Content-Type","application/json");
 			request.setEntity(new StringEntity("{\n" + 
 					"       \"id\": 44,\n" + 
 					"       \"name\": \"Dhrumil\",\n" + 
 					"       \"password\" : \"12345\",\n" + 
 					"       \"role\":\"user\"\n" + 
 					"   }"));
+			HttpResponse response=client.execute(request);
 		} catch (Exception e) {
 			Assert.fail("Unable to hit /users");
 			e.printStackTrace();
@@ -46,7 +47,7 @@ public class TestApi {
 			HttpResponse response=client.execute(request);
 			Assert.assertEquals(response.getStatusLine().getStatusCode(), HttpStatus.SC_OK);
 			Assert.assertEquals("application/json", ContentType.getOrDefault(response.getEntity()).getMimeType());
-			Assert.assertEquals(31,retrieveResourceFromResponse(response, User.class).getId() );
+			Assert.assertEquals(44,retrieveResourceFromResponse(response, User.class).getId() );
 		} catch (Exception e) {
 			Assert.fail("Unable to hit /users");
 			e.printStackTrace();
